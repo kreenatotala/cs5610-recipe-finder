@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Add New Recipe</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <main>
+        <h1>Add New Recipe</h1>
+        <a href="./index.html"><button type="button">← Back to Home</button></a>
+        <a href="./recipes.html"><button type="button">← Back to Recipes</button></a>
+        
+        <form id="addRecipeForm">
+            <label for="name">Recipe Name</label>
+            <input id="name" name="name" required />
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Snack">Snack</option>
+                <option value="Appetizer">Appetizer</option>
+            </select>
+
+            <label for="cookTime">Cook Time (minutes)</label>
+            <input id="cookTime" name="cookTime" type="number" min="1" required />
+
+            <label for="servings">Servings</label>
+            <input id="servings" name="servings" type="number" min="1" required />
+
+            <label for="source">Source (URL - optional)</label>
+            <input id="source" name="source" type="url" placeholder="https://example.com" />
+
+            <label for="ingredients">Ingredients (one per line)</label>
+            <textarea id="ingredients" name="ingredients" rows="8" required 
+                placeholder="2 cups flour&#10;1 cup sugar&#10;3 eggs"></textarea>
+
+            <label for="instructions">Instructions</label>
+            <textarea id="instructions" name="instructions" rows="10" required
+                placeholder="1. ..."></textarea>
+
+            <button type="submit">Add Recipe</button>
+        </form>
+        
+        <p id="errorMessage" role="alert"></p>
+        <p id="successMessage" role="status"></p>
+    </main>
+    <script type="module" src="./js/add-recipe.js"></script>
+</body>
+</html>
