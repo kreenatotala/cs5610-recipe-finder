@@ -1,4 +1,4 @@
-import {MongoClient} from 'mongodb';
+import {MongoClient, ObjectId} from 'mongodb';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -14,7 +14,7 @@ function MyMongoDB({
 
     const connect = () => {
         const client = new MongoClient(URI);
-        const recipes = client.db(DB_NAME).collection(COLLECTION_NAME);
+        const recipes = client.db(DB).collection(COLLECTION_NAME);
         const users = client.db(DB).collection('users');
 
         return { client, recipes, users };
@@ -34,6 +34,91 @@ function MyMongoDB({
             await client.close();
         }
         
+    };
+    
+     me.getRecipeById = async (recipeId) => {
+        const {client, recipes} = connect();
+
+        try {
+            const recipe = await recipes.findOne({ _id: new ObjectId(recipeId) });
+            console.log('Fetched recipe from MongoDB:', recipe);
+            return recipe;
+        } catch (err) {
+            console.error('Error fetching recipe from MongoDB:', err);
+            throw err;
+        } finally {
+            await client.close();
+        }
+    };
+
+    me.createRecipe = async ({name, ingredients, instructions, category, cookTime, servings, source}) => {
+        const {client, recipes} = connect();
+
+        try {
+            const createdAt = new Date();
+            const doc = {
+                name,
+                ingredients,
+                instructions,
+                category: category || 'Uncategorized',
+                cookTime: parseInt(cookTime) || 0,
+                servings: parseInt(servings) || 1,
+                source: source || '',
+                createdAt,
+                updatedAt: createdAt
+            };
+            const result = await recipes.insertOne(doc);
+            console.log('Created recipe in MongoDB with id:', result.insertedId);
+            return { _id: result.insertedId, ...doc };
+        } catch (err) {
+            console.error('Error creating recipe in MongoDB:', err);
+            throw err;
+        } finally {
+            await client.close();
+        }
+    };
+
+    me.updateRecipe = async (recipeId, updateData) => {
+        const {client, recipes} = connect();
+
+        try {
+            const update = {
+                ...updateData,
+                updatedAt: new Date()
+            };
+
+            const result = await recipes.updateOne(
+                { _id: new ObjectId(recipeId) },
+                { $set: update }
+            );
+
+            if (result.matchedCount === 0) {
+                return null;
+            }
+
+            console.log('Updated recipe in MongoDB:', recipeId);
+            return await me.getRecipeById(recipeId);
+        } catch (err) {
+            console.error('Error updating recipe in MongoDB:', err);
+            throw err;
+        } finally {
+            await client.close();
+        }
+    };
+
+    me.deleteRecipe = async (recipeId) => {
+        const {client, recipes} = connect();
+
+        try {
+            const result = await recipes.deleteOne({ _id: new ObjectId(recipeId) });
+            console.log('Deleted recipe from MongoDB:', recipeId);
+            return result.deletedCount > 0;
+        } catch (err) {
+            console.error('Error deleting recipe from MongoDB:', err);
+            throw err;
+        } finally {
+            await client.close();
+        }
     };
 
     me.getUserByUsernameOrEmail = async (username, email) => {
