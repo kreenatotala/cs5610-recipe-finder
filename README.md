@@ -22,9 +22,6 @@ Build a small full‑stack app that demonstrates:
 ---
 
 ## Screenshot
-> Place a screenshot at `frontend/screenshot.png` (or update the path below).
-
-![Recipe Keeper Screenshot](frontend/screenshot.png)
 
 ---
 
@@ -130,12 +127,6 @@ node backend.js
 - **Client-side rendering:** All recipe lists/details are rendered in the browser by vanilla JS using data from `/api/*`.
 - **Auth:** After a successful login/register, the user object is stored in `localStorage` (`currentUser`). The “Add Recipe” page is **gated**: if not logged in, the form is hidden and a message with links to Login/Register is shown.
 - **Data model:** Recipes stored in MongoDB with `createdAt`/`updatedAt`. Listing defaults to newest first for visibility.
-
----
-
-## Deployment (simple options)
-- **Render / Railway / Fly.io**: Provide `MONGODB_URI`, `DB_NAME`, `PORT` in the host settings.
-- **VPS/Server**: Run `node backend.js` behind a reverse proxy (nginx).
 
 ---
 
