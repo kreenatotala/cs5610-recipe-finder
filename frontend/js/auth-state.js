@@ -1,4 +1,3 @@
-// frontend/js/auth-state.js
 function getCurrentUser() {
   try {
     return JSON.parse(localStorage.getItem("currentUser") || "null");
@@ -36,7 +35,7 @@ function renderBanner() {
 
 function gateAddRecipe() {
   const user = getCurrentUser();
-  const notice = document.getElementById("authNotice"); // optional <p id="authNotice"></p>
+  const notice = document.getElementById("authNotice");
   const addBtn = document.getElementById("addRecipeBtn");
   const addForm = document.getElementById("addRecipeForm");
 

@@ -1,4 +1,3 @@
-// frontend/js/register.js
 function $(id) {
   return document.getElementById(id);
 }
