@@ -20,11 +20,11 @@ function MyMongoDB({
         return { client, recipes, users };
     };
 
-    me.getRecipes = async ({query = {}, pageSize = 20, page = 0} = {}) => {
+    me.getRecipes = async ({query = {}, pageSize = 100, page = 0} = {}) => {
         const {client, recipes} = connect();
 
         try {
-            const data = await recipes.find(query).limit(pageSize).skip(pageSize*page).toArray();
+            const data = await recipes.find(query).sort({updatedAt: -1, createdAt: -1}).limit(pageSize).skip(pageSize*page).toArray();
             console.log('Fetched recipes from MongoDB:', data);
             return data;
         } catch (err) {
