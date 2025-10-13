@@ -121,41 +121,34 @@ function MyMongoDB({
         }
     };
 
-    me.getUserByUsernameOrEmail = async (username, email) => {
-        const {client, users} = connect();
-
+    me.getUserByUsername = async (username) => {
+        const { client, users } = connect();
         try {
-            const user = await users.findOne({
-                $or: [
-                    { username: username },
-                    { email: email }
-                ]
-            });
+            const user = await users.findOne({ username });
             return user;
         } catch (err) {
-            console.error('Error fetching user from MongoDB:', err);
+            console.error('Error fetching user by username from MongoDB:', err);
             throw err;
         } finally {
             await client.close();
         }
-    };  
+    };
 
-    me.createUser = async ({username, email, password, firstName = '', lastName = ''}) => {
-        const {client, users} = connect();
-
+    me.createUser = async ({ username, password, firstName = '', lastName = '' }) => {
+        const { client, users } = connect();
         try {
             const createdAt = new Date();
             const doc = {
                 username,
-                email,
-                password, // In a real app, ensure this is hashed!
+                // NOTE: you said keep it simple for class project — this remains plain text like your original.
+                // In production you'd hash this.
+                password,
                 firstName,
                 lastName,
                 createdAt,
             };
             const result = await users.insertOne(doc);
             console.log('Created user in MongoDB with id:', result.insertedId);
-            // Return the created document with the generated _id
             return { _id: result.insertedId, ...doc };
         } catch (err) {
             console.error('Error creating user in MongoDB:', err);
@@ -166,10 +159,10 @@ function MyMongoDB({
     };
     
     me.verifyUserCredentials = async (username, password) => {
-        const {client, users} = connect();
+        const { client, users } = connect();
         try {
-            const user = await users.findOne({ username: username });
-            if (user && user.password === password) { // In a real app, use hashed password comparison
+            const user = await users.findOne({ username });
+            if (user && user.password === password) {
                 return user;
             }
             return null;
