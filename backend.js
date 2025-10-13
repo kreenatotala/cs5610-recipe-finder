@@ -1,6 +1,6 @@
-import express from 'express';
-import recipesRouter from './routes/recipes.js';
-import authRoutes from './routes/users.js';
+import express from "express";
+import recipesRouter from "./routes/recipes.js";
+import authRoutes from "./routes/users.js";
 
 console.log("Initalizing backend server...");
 const PORT = process.env.PORT || 3000;
@@ -15,11 +15,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static('frontend'));
+app.use(express.static("frontend"));
 
-app.use('/api/', recipesRouter);
+app.use("/api/", recipesRouter);
 
-app.use('/api/auth', authRoutes);
+app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

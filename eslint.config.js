@@ -23,15 +23,12 @@ export default [
       },
     },
     plugins: {
-      
       prettier: prettier,
     },
-    
 
     rules: {
       // ESLint recommended rules
       ...js.configs.recommended.rules,
-
 
       indent: [
         "error",
