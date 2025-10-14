@@ -131,10 +131,10 @@ It is also deployed publicly using `Render` at this URL:  https://cs5610-recipe-
 
 ## Usage Notes
 - **Client-side rendering:** All recipe lists/details are rendered in the browser by vanilla JS using data from `/api/*`.
-- **Auth:** After a successful login/register, the user object is stored in `localStorage` (`currentUser`). The “Add Recipe” page is **gated**: if not logged in, the form is hidden and a message with links to Login/Register is shown.
+- **Auth:** After a successful login/register, the user object is stored in `localStorage` (`currentUser`). The “Add Recipe” page is **gated**: if not logged in, the form is hidden and a message with links to Login/Register is shown. Same when a user tries to delete a recipe without authentication. 
 - **Data model:** Recipes stored in MongoDB with `createdAt`/`updatedAt`. Listing defaults to newest first for visibility.
 
 ---
 
 ## Credits
-This app was built for **CS5610** as a two‑person project with a focus on simplicity, clear structure, and working features over production hardening.
+This app was built for **CS5610** as a two‑person project with a focus on simplicity, clear structure, and working features over production hardening. Assets were generated using Sora with the following prompt `create three different images of pixelated foods`. 
