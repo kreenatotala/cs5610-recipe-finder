@@ -1,0 +1,25 @@
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 { margin: 0 0 0.5rem; }
+.hero p { color: var(--muted); margin: 0 0 1.5rem; }
+
+.cta {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+.link-cards .card {
+  text-align: left;
+}
+.link-cards h3 { margin: 0 0 0.5rem; }
+.link-cards p { margin: 0; color: var(--muted); }

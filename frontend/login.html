@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/login.css">
     <title>Login</title>
 </head>
 <body>
-    <main>
+    <main class="container">
+        <section class="card auth-wrap">
         <h1>Login</h1>
+        <a href="./index.html">← Back to Home</a>
         <form id="loginForm">
         <label for="username">Username</label>
         <input id="username" name="username" required />
@@ -17,6 +21,8 @@
         <button type="submit">Login</button>
         </form>
         <p id="errorMessage" role="alert"></p>
+        <div class="helper">Don't have an account? <a href="./register.html">Register here</a></div>    
+        </section>  
     </main>
     <script type="module" src="./js/login.js"></script>
 </body>
