@@ -40,7 +40,53 @@ function displayRecipe(recipe) {
   `;
 }
 
+function showLoginRequiredModal() {
+  // if already present, don't add again
+  if (document.getElementById("login-required-modal")) return;
+
+  const overlay = document.createElement("div");
+  overlay.id = "login-required-modal";
+  overlay.className = "modal-overlay";
+
+  overlay.innerHTML = `
+    <div class="modal-box">
+      <h3>Login required</h3>
+      <p>You must be logged in to delete a recipe.</p>
+      <div class="modal-actions">
+        <button id="modal-login-btn" class="btn primary">Login</button>
+        <button id="modal-close-btn" class="btn">Close</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  document
+    .getElementById("modal-login-btn")
+    .addEventListener("click", function () {
+      window.location.href = "./login.html";
+    });
+  document
+    .getElementById("modal-close-btn")
+    .addEventListener("click", function () {
+      overlay.remove();
+    });
+}
+
 window.deleteRecipe = async function (recipeId) {
+  // client-side auth check: require currentUser in localStorage
+  const currentUser = (function () {
+    try {
+      return JSON.parse(localStorage.getItem("currentUser") || "null");
+    } catch {
+      return null;
+    }
+  })();
+  if (!currentUser) {
+    showLoginRequiredModal();
+    return;
+  }
+
   if (!confirm("Are you sure you want to delete this recipe?")) {
     return;
   }
