@@ -59,3 +59,23 @@ h1 {
     background-color: #f8d7da;
     color: #721c24;
 }
+
+.filter-button {
+    background-color: #9da9ce;
+}
+
+.recipe-card .source {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.source-favicon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.source-text {
+    color: #666;
+}
