@@ -8,14 +8,35 @@
     <title>Recipe Finder</title>
 </head>
 <body>
-    <main>
-      <h1>Recipe Finder</h1>
-      <nav><div id="nav-auth"></div></nav>
+    <main class="main-container page-center">
+      <section class="hero">
+        <h1>Recipe Finder</h1>
+        <p>Discover and save your favorite recipes.</p>
+      </section>
+
+      <section class="section">
+        <div class="image-row">
+          <div class="image-card">
+            <img src="/assets/pixel-pizza.png" alt="pizza" />
+          </div>
+          <div class="image-card">
+            <img src="/assets/pixel-ramen.png" alt="ramen" />
+          </div>
+          <div class="image-card">
+            <img src="/assets/pixel-burger.png" alt="burger" />
+          </div>
+        </div>
+      </section>
+
+      <nav>
+        <div id="nav-auth"></div>
+      </nav>
       <p id="authNotice"></p>
       <script type="module" src="./js/auth-state.js"></script>
+
       <p><a href="./recipes.html"><button type="button">Browse Recipes</button></a></p>
       <p><a href="./add-recipe.html"><button type="button">Add New Recipe</button></a></p>
     </main>
-    <script type="module" src="./js/frontend.js"></script>   
+    <script type="module" src="./js/frontend.js"></script>
 </body>
 </html>

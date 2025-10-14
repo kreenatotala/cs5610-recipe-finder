@@ -17,6 +17,8 @@ app.use((req, res, next) => {
 
 app.use(express.static("frontend"));
 
+app.use("/assets", express.static("assets"));
+
 app.use("/api/", recipesRouter);
 
 app.use("/api/auth", authRoutes);
