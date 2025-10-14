@@ -1,0 +1,56 @@
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #1771ad;
+}
+
+#errorMessage {
+    color: #d32f2f;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#successMessage {
+    color: #388e3c;
+    margin-top: 10px;
+    font-weight: bold;
+}
