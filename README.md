@@ -1,4 +1,4 @@
-# Recipe Keeper
+# Recipe Finder
 
 A simple, student-built web app to browse, add, view, and delete recipes. The backend exposes JSON APIs with Node.js + Express + MongoDB, and the UI is rendered on the client with **vanilla JavaScript** modules.
 
@@ -16,7 +16,7 @@ Build a small full‑stack app that demonstrates:
 - Node.js + Express server with REST endpoints
 - MongoDB persistence (recipes + users)
 - Client‑side rendering with vanilla JS (no frameworks)
-- Basic auth (register, login, logout) and gated actions (add recipe only when logged in)
+- Basic auth (register, login, logout) and gated actions (add and delete recipe only when logged in)
 - Clean repo structure, ESLint + Prettier, and simple deploy
 
 ---
@@ -28,7 +28,7 @@ Build a small full‑stack app that demonstrates:
 ## Tech Stack
 - **Frontend:** HTML + CSS + vanilla JS (ES modules) — client‑side DOM rendering
 - **Backend:** Node.js + Express
-- **Database:** MongoDB (local or Atlas)
+- **Database:** MongoDB (Atlas)
 - **Lint/Format:** ESLint + Prettier
 - **Environment:** `.env` for secrets (no credentials committed)
 
@@ -120,6 +120,12 @@ node backend.js
 5) **Open the frontend**
 - Navigate to: `http://localhost:3000/`
 - Pages are served from `/frontend` (e.g., `/frontend/recipes.html`) or via links on the index.
+
+---
+
+## Deployment
+
+It is also deployed publicly using `Render` at this URL:  https://cs5610-recipe-finder.onrender.com/ 
 
 ---
 
