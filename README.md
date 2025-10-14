@@ -22,6 +22,12 @@ Build a small full‑stack app that demonstrates:
 ---
 
 ## Screenshot
+<img width="1411" height="676" alt="Screenshot 2025-10-13 at 11 32 29 PM" src="https://github.com/user-attachments/assets/57e3f783-b654-4eb2-977c-de6801a7ed42" />
+<img width="1411" height="654" alt="Screenshot 2025-10-13 at 11 32 40 PM" src="https://github.com/user-attachments/assets/5c8919ff-29fc-469c-83e5-9f5fbe4113eb" />
+<img width="973" height="636" alt="Screenshot 2025-10-13 at 11 32 59 PM" src="https://github.com/user-attachments/assets/1f2c9e39-bf1a-408d-b6c5-a3509034afbb" />
+<img width="601" height="557" alt="Screenshot 2025-10-13 at 11 33 10 PM" src="https://github.com/user-attachments/assets/69c70c2b-aa15-4820-8f49-311987a3f4c9" />
+<img width="814" height="534" alt="Screenshot 2025-10-13 at 11 33 18 PM" src="https://github.com/user-attachments/assets/f35c3f66-bf20-4538-b79b-3f2fda3922c1" />
+
 
 ---
 
