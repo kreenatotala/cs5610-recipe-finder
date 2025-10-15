@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
     if (existing) {
       return res.status(409).json({ error: "Username already in use" });
     }
-
+    // Are passwords being hashed and not being stored in plain text on the db?
     const created = await MyDB.createUser({
       username,
       password,
@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
     if (!user) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
-
+    
     const publicUser = { ...user };
     delete publicUser.password;
     return res.json(publicUser);
