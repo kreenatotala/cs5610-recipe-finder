@@ -37,7 +37,7 @@ function renderRecipes(recipes) {
       // not a url, just display the raw source
       sourceHtml = `<span class="source-text">${recipe.source || ""}</span>`;
     }
-
+    // Suggestion to maybe render a thumbnail of the food so that people know what the recipe looks like.
     html += `
       <div class="recipe-card">
         <h3>${recipe.name}</h3>
