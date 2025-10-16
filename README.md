@@ -21,6 +21,17 @@ Build a small full‑stack app that demonstrates:
 
 ---
 
+## Design Document
+[recipe finder design doc.pdf](https://github.com/user-attachments/files/22938185/recipe.finder.design.doc.pdf)
+
+---
+
+## Video and Presentation
+
+Video: 
+
+Presentation: https://docs.google.com/presentation/d/1tIVtI5iMwxkiyWu7O4nWnykVKzyLXEA3cv3nmVnuEBU/edit?usp=sharing
+
 ## Screenshot
 <img width="1411" height="676" alt="Screenshot 2025-10-13 at 11 32 29 PM" src="https://github.com/user-attachments/assets/57e3f783-b654-4eb2-977c-de6801a7ed42" />
 <img width="1411" height="654" alt="Screenshot 2025-10-13 at 11 32 40 PM" src="https://github.com/user-attachments/assets/5c8919ff-29fc-469c-83e5-9f5fbe4113eb" />
