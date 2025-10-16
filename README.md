@@ -28,7 +28,7 @@ Build a small full‑stack app that demonstrates:
 
 ## Video and Presentation
 
-Video: 
+Video: https://drive.google.com/file/d/1ZY3X6gvndFSE1aZJ6cCJTL_B-1toyxpO/view
 
 Presentation: https://docs.google.com/presentation/d/1tIVtI5iMwxkiyWu7O4nWnykVKzyLXEA3cv3nmVnuEBU/edit?usp=sharing
 
